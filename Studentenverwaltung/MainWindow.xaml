@@ -31,21 +31,21 @@
                         </Grid.RowDefinitions>
 
                         <Label Content="Vorname" Grid.Row="0" Margin="1,8,0,8" HorizontalAlignment="Left" VerticalAlignment="Center" ></Label>
-                        <TextBox Grid.Column="2" Grid.Row="0" Margin="4,10,4,10"></TextBox>
+                        <TextBox x:Name="tboFName" Grid.Column="2" Grid.Row="0" Margin="4,10,4,10"></TextBox>
 
                         <Label Content="Nachname" Grid.Row="1" Margin="2,8,0,8"  HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
-                        <TextBox Grid.Column="2" Grid.Row="1" Margin="4,10,4,10"></TextBox>
+                        <TextBox x:Name="tboLName" Grid.Column="2" Grid.Row="1" Margin="4,10,4,10"></TextBox>
 
                         <Label Content="Alter" Grid.Row="2" Margin="4,8,0,8"  HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
-                        <TextBox Grid.Column="2" Grid.Row="2" Margin="4,10,4,10"></TextBox>
+                        <TextBox x:Name="tboAge" Grid.Column="2" Grid.Row="2" Margin="4,10,4,10"></TextBox>
 
                         <Label Content="Studiengang" Grid.Row="3" Margin="4,8,0,8"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                        <ComboBox Grid.Column="2" Grid.Row="3" Margin="4,10,4,10"></ComboBox>
+                        <ComboBox x:Name="cboProg" Grid.Column="2" Grid.Row="3" Margin="4,10,4,10"></ComboBox>
 
                         <Label Content="Beitrag bez." Grid.Row="4" Margin="4,8,0,8"  HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
-                        <CheckBox Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
+                        <CheckBox x:Name="chkPaid" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"></CheckBox>
 
-                        <Button Grid.Row="5" Grid.Column="2" Margin="10.333,10,10,10.333" Content="Speichern"></Button>
+                        <Button Grid.Row="5" Grid.Column="2" Margin="10.333,10,10,10.333" Content="Speichern" Click="Button_Click"></Button>
                     </Grid>
                     <Grid Grid.Column="1">
                         <Grid.RowDefinitions>
@@ -53,11 +53,11 @@
                             <RowDefinition Height="10*"/>
                         </Grid.RowDefinitions>
 
-                        <DataGrid Grid.Row="0" />
+                        <DataGrid x:Name="dtgStudentData" Grid.Row="0" />
 
                         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Button Content="Editieren" Margin="5"></Button>
-                            <Button Content="Löschen"  Margin="5"></Button>
+                            <Button Content="Editieren" Margin="5" Click="EditBtnClicked"></Button>
+                            <Button Content="Löschen"  Margin="5" Click="DeleteBtnClicked"></Button>
                         </StackPanel>
 
                     </Grid>
@@ -75,13 +75,11 @@
                             <RowDefinition Height="35*"/>
                             <RowDefinition Height="290*"/>
                         </Grid.RowDefinitions>
-                        <TextBox Grid.Row="0" Width="90" Margin="5"></TextBox>
-                        <Button Grid.Row="1" Content="Speichern" Margin="5" Width="100"></Button>
+                        <TextBox x:Name="tboNewProg" Grid.Row="0" Width="90" Margin="5"></TextBox>
+                        <Button Grid.Row="1" Content="Speichern" Margin="5" Width="100" Click="MasterDataSaveBtnClicked"></Button>
                     </Grid>
                     <Grid Grid.Column="2">
-                        <ListBox Grid.Column="1">
-
-                        </ListBox>
+                        <ListBox x:Name="lboProgs" Grid.Column="1"></ListBox>
                     </Grid>
 
                 </Grid>
