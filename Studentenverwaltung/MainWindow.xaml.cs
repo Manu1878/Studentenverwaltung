@@ -60,7 +60,7 @@ namespace Studentenverwaltung
                 tboLName.Text = selected.Lastname;
                 chkPaid.IsChecked = selected.HasPaid;
                 cboProg.SelectedItem = selected.Program;
-
+                //Test
                 //deletes the entry from the List
                 Students.RemoveAt(dtgStudentData.SelectedIndex);
                 UpdateStudentDataGrid();
